@@ -1,15 +1,15 @@
-package Calculator;
+import Calculator.*;
 
-public class UserCompute {
-    public int computer(Calculate compute,int num1,int num2){
-        int result = compute.computer(num1,num2);
-        return result;
+public class UserCompute{
+    public static void compute(Calculate compute, int num1, int num2) {
+        int result = compute.computer(num1, num2);
+        System.out.println(result);
     }
 
-    public static void main(String[] args){
-        System.out.println(new DivideOper().computer(25,0));
-        System.out.println(new SubOper().computer(25,5));
-        System.out.println(new AddOper().computer(25,5));
-        System.out.println(new TimesOper().computer(25,5));
+    public static void main(String args[]){
+        UserCompute.compute(new DivideOper(),25,5);
+        UserCompute.compute(new SubOper(),25,5);
+        UserCompute.compute(new AddOper(),25,5);
+        UserCompute.compute(new TimesOper(),25,5);
     }
 }
