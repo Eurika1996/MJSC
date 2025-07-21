@@ -12,20 +12,20 @@ public class charactorcount {
         //3.新建一个hashmap，用来存放数组中遍历的字符和相应的次数
         HashMap<Character, Integer> hashmap = new HashMap<>();
         //4.遍历数组，拿到每一个字符，如果数组中的值没有统计过，就计1，如果数组中的值被计入过key，那么在原来基础上+1
-        for (int i=0; i<charArray.length;i++) {
-            Integer value = hashmap.get(charArray[i]);
+        for (char i:charArray) {
+            Integer value = hashmap.get(i);
             if (value == null) {
 
-                hashmap.put(charArray[i],1);
+                hashmap.put(i,1);
             } else {
                 value = value + 1;
-                hashmap.put(charArray[i],value);
+                hashmap.put(i,value);
             }
         }
         //5.遍历map，输出map中的字符和相应次数
         Set<HashMap.Entry<Character, Integer>> entrySet = hashmap.entrySet();
         for (HashMap.Entry<Character, Integer> entry : entrySet) {
-            System.out.println("key=" + entry.getKey() + "value=" + entry.getValue());
+            System.out.println("字符是:" + entry.getKey() + "该字符出现的次数是:" + entry.getValue());
         }
 
     }
